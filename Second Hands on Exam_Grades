@@ -1,0 +1,45 @@
+def remarks(avg):
+        if 50 < avg:
+            return "Dropped"
+        elif 75 < avg:
+            return "Failed"
+        elif 75 <= avg <= 80:
+            return "Passed – Satisfactory"
+        elif 81 <= avg <= 85:
+            return "Passed – Good"
+        elif 86 <= avg <= 90:
+            return "Passed – Average"
+        elif 91 <= avg <= 99:
+            return "Passed – Very Good"
+        elif avg == 100:
+            return "Passed – Excellent"
+
+        grade = []
+        while True:
+            try:
+                grade = float(input("enter grade " "-1 to stop"))
+                if grade == -1:
+                    break
+                if 0 <= grade <= 100:
+                    grade.append(grade)
+                else:
+                    print("invalid")
+            except ValueError:
+                print("invalid inpuut")
+
+            if grade:
+                print(grade)
+                avg = sum(grade)/len(grade)
+                point_grade = ((100 - avg)+10)/10
+                remark = remark(avg)
+
+                print(avg)
+                print(point_grade)
+                print(remark)
+
+
+
+
+
+
+
